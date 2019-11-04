@@ -1,0 +1,17 @@
+<div class="container">
+    <form [formGroup] = "registrationForm">
+      <div class="form-group">
+        <label>Phone Number</label>
+        <input  [class.is-invalid]="registrationForm.get('phoneNumber').invalid && registrationForm.get('phoneNumber').touched" type="number" class="form-control" formControlName= "phoneNumber">
+         <small [class.d-none] = "registrationForm.get('phoneNumber').valid || registrationForm.get('phoneNumber').untouched" 
+        class="text-danger">Phone Number is Required</small> 
+       
+      <!-- <div *ngIf = "registrationForm.get('phoneNumber').invalid && registrationForm.get('phoneNumber').touched"></div> -->
+       <!-- <small *ngIf="registrationForm.get('phoneNumber').errors?.required" class="text-danger">phone Number is Required</small>    -->
+       <!-- <small *ngIf="registrationForm.get('phoneNumber').errors?.Validators.pattern" class="text-danger">phone number should be 10 digits</small>   
+       <small></small>    -->
+    </div>
+      <button class ="btn btn-primary" type="submit" routerLink="/otp" [disabled]="!registrationForm.valid">Generate OTP</button>
+    </form>
+  </div>
+

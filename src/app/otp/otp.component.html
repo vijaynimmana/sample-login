@@ -1,0 +1,12 @@
+<div class="container">
+    <form [formGroup] = "otpVija">
+      <div class="form-group">
+        <label>Enter your OTP</label>
+        <input [class.is-invalid]="otpVija.get('key').invalid && otpVija.get('key').touched" type="number" type="number" class="form-control" formControlName= "key">
+         <small [class.d-none] = "otpVija.get('key').valid || otpVija.get('key').untouched" 
+        class="text-danger">OTP is Required</small>   
+    </div>
+      <button class ="btn btn-primary" type="submit" routerLink="/dashboard" [disabled]="!otpVija.valid">Click to visit Dashboard</button>
+    </form>
+  </div>
+
